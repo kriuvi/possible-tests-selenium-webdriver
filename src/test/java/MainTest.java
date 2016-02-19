@@ -10,6 +10,8 @@ import pages.MainPage;
 import java.io.IOException;
 import java.net.MalformedURLException;
 
+import static junit.framework.Assert.assertEquals;
+
 public class MainTest {
     private static WebDriver driver;
     private final String BASE_URL = "http://timvroom.com/selenium/playground/";
@@ -89,6 +91,12 @@ public class MainTest {
 
         //Task #17
         mainPage.submitForm();
+
+        //Check results
+        String actualResult = mainPage.checkResults()
+                .showResults();
+
+        assertEquals("Passed 17 of 17 tests", actualResult);
     }
 
     @After

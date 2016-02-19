@@ -56,6 +56,11 @@ public class MainPage extends BasePage {
 
     @FindBy(id = "submitbutton")
     private WebElement submitButton;
+    @FindBy(id = "checkresults")
+    private WebElement checkButton;
+
+    @FindBy(id = "showresults")
+    private WebElement showResults;
 
     public MainPage(WebDriver driver) {
         super(driver);
@@ -167,5 +172,14 @@ public class MainPage extends BasePage {
     public MainPage clickClickAfterWaitLink() {
         this.click(clickAfterWaitLink);
         return this;
+    }
+
+    public MainPage checkResults() {
+        this.click(checkButton);
+        return this;
+    }
+
+    public String showResults() {
+        return this.getText(showResults);
     }
 }
